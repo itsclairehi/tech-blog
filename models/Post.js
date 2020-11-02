@@ -13,13 +13,15 @@ Post.init(
             autoIncrement: true
         },
 
-        text: {
-            type :DataTypes.STRING
+        text_test: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
         {
             sequelize,
             freezeTableName: true,
+            timestamps: false,
             underscored: true,
             modelName: 'post'
           }
