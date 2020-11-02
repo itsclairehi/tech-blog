@@ -1,6 +1,6 @@
 //require all models
 // const { foreign_key } = require('inflection')
-const Modeltest = require('./Modeltest')
+const Post = require('./Post')
 
 //create associations
 //Modeltest.belongsTo(model2, {
@@ -8,4 +8,4 @@ const Modeltest = require('./Modeltest')
 // })
 
 //export all models as unnamed object
-module.exports = {Modeltest}
+module.exports = {Post}
