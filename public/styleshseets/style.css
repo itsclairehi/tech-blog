@@ -5,3 +5,8 @@ body {
 h1 {
     color:whitesmoke
 }
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}

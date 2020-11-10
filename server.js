@@ -1,17 +1,18 @@
 const express = require('express');
-const routes = require('./controllers');
 const sequelize = require('./config/connection');
-const path = require('path');
+const path = require('path')
+
+const routes = require('./controllers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 //handlebars setup
 const exphbs = require('express-handlebars');
-// const hbs = exphbs.create({});
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+//end handlebars
 
 //session setup
 const session = require('express-session');
@@ -30,22 +31,15 @@ const sess = {
 app.use(session(sess));
 //end session setup
 
-
-//end handlebars setup
-
-// turn on routes
-app.use(routes);
-
 // make styles and html available to server
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(routes)
 
-
-
-// turn on connection to db and server
 sequelize.sync({ force: true }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening at port ${PORT}`));
-});
+    app.listen(PORT, () => console.log(`Now listening at port ${PORT}`));
+  });
