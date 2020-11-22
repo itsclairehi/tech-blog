@@ -1,5 +1,5 @@
 body {
-    background-color: aquamarine;
+    background-color: rgb(177, 211, 177);
 }
 
 h1 {
@@ -10,3 +10,14 @@ nav {
     display: flex;
     justify-content: space-around;
 }
+
+.card {
+    background-color: rgb(141, 184, 184);
+    width: 90%
+}
+
+.login-card {
+    margin-top: 10%;
+}
+
+
