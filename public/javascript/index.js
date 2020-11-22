@@ -4,12 +4,13 @@
     
 // })
 
-var test = document.querySelector("#test");
+// var test = document.querySelector("#test");
 
-document.addEventListener("click", (event) => {
-    console.log("connected");
+// document.addEventListener("click", (event) => {
+//     console.log("connected");
     
-})
+// })
+console.log("Hello???");
 
 
 //is make a GET request

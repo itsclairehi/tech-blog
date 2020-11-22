@@ -1,12 +1,11 @@
 const router = require('express').Router();
 const { Blog } = require('../../models/Blog');
-const sequelize = require('../../config/connection');
+
 
 router.get('/', (req, res) => {
     Blog.findAll()
         .then((dbPostData) => {
-            console.log("HHHHHHH", dbPostData)
-            res.render("homepage", {dbPostData})
+            res.json(dbPostData)
         })
         .catch(err => {
             console.log(err);
