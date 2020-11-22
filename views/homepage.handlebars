@@ -12,10 +12,12 @@
 
         </div>
 
-{{#each dbPostData}}
-<h2>{{this.dataValues.title}}</h2>
+{{!-- {{#each dbPostData}}
+{{> blog-post this.dataValues}}
+{{/each}} --}}
+{{#each blogs as |blog|}}
+{{> blog-post blog}}
 {{/each}}
-
     </div>
 
     <script src="/javascript/index.js"></script>
